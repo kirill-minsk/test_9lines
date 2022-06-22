@@ -1,0 +1,26 @@
+header.header.desktop.laptop.sticky
+	.container
+		button.header__burger.btn.js-burger(type="button")
+			span.header__open
+				+lazyPicture({
+					src: `${baseDir}images/burger.svg`,
+				})
+			span.header__close
+				+lazyPicture({
+					src: `${baseDir}images/close.svg`,
+				})
+
+		nav.header__menu
+			.header__list
+				each object, key in data.header.menu
+					a.header__link.js-to-anchor(
+						href=object.url
+						data-link=key
+					)(class = object.class)
+						+lazyPicture({
+							src: `${baseDir}images/active.svg`,
+						})
+						!= object.name
+				+lazyPicture({
+					src: `${baseDir}images/mobile_menu.png`,
+				}).mobile_menu

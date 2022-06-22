@@ -1,0 +1,23 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	//-
+
+block content
+	include pug/data
+
+	include pug/components/preloader
+
+	include pug/components/share_popup
+
+	main.home.section#about
+		include pug/components/header
+
+		include pug/pages/home
+
+		include pug/components/footer
+
+	//- include pug/components/analytics

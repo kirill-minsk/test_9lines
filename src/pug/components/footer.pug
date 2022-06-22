@@ -1,0 +1,16 @@
+.js-back-to-top
+	svg(id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="5 5 110 110")
+		circle(cx="60" cy="60" r="50" fill="none" stroke="#282A33" stroke-width="3")
+		circle(id="round_progress" cx="60" cy="60" r="50" transform="rotate(-90 60 60)" fill="none" stroke-dashoffset="314" stroke-dasharray="314"  stroke="dodgerblue" stroke-width="3")
+	.text
+		#myBar
+		.js-back-to-top_img-wrap
+			+lazyPicture({
+				src: `${baseDir}images/backtop.svg`,
+			}).js-back-to-top_img
+footer(translate="no")
+	.container
+		.footer
+			+lazyPicture({
+				src: `${baseDir}images/footer.png`,
+			})(srcset=`${baseDir}images/footer.png 1x, ${baseDir}images/footer@2x.png 2x`).footer_img

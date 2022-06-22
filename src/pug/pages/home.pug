@@ -1,0 +1,22 @@
+
+include ../components/about
+
+.container.line_block
+	+lazyPicture({
+		src: `${baseDir}images/line1.svg`,
+	}).line_1.animation
+	+lazyPicture({
+		src: `${baseDir}images/line1_mob.svg`,
+	}).line_1_mob.animation
+
+include ../components/resume
+
+.container.line_block
+		+lazyPicture({
+			src: `${baseDir}images/line2.svg`,
+		}).line_2.animation
+		+lazyPicture({
+			src: `${baseDir}images/line2_mob.svg`,
+		}).line_2_mob.animation
+		
+include ../components/skills

@@ -1,0 +1,7 @@
+.container.section#skills
+	h3= data.skills.header
+	.skills
+		each item, key in data.skills.list
+			.skills_item
+				.skills_title= item.title
+				.skills_text= item.text

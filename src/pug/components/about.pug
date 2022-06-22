@@ -1,0 +1,26 @@
+.container
+	.logo
+
+		+lazyPicture({
+			src: `${baseDir}images/girl.png`,
+		})(srcset=`${baseDir}images/girl.png 1x, ${baseDir}images/girl@2x.png 2x`).animation
+	.about
+		.about_info
+			h1.animation#title_replace!= data.about.title
+			p.animation#description_replace!= data.about.description
+			a(href='#' title="Редактировать текст").edit
+				span
+					+svg("edit_icon")
+		.about_contacts
+			.share
+				ul
+					li.animation2
+						a(href="mailto:"+data.about.mail)= data.about.mail
+					li.animation2
+						a(href="tel:"+data.about.phone)= data.about.phone
+					li.animation2
+						span= data.about.city
+				.social
+					each object, key in data.share.list
+						a(href=object.url id="btnshare_" + object.name).animation2
+								+svg(`${object.name}`)

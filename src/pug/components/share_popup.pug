@@ -1,0 +1,14 @@
+.share_popup
+	.share_popup_content
+		.share_popup_info
+			textarea(rows="3").animation.h1#title!= data.about.title
+			textarea(rows="7").animation.p#description!= data.about.description
+		.share_popup_img
+			+lazyPicture({
+				src: `${baseDir}images/share_img.png`,
+			})(srcset=`${baseDir}images/share_img.png 1x, ${baseDir}images/share_img@2x.png 2x`).animation
+		.close
+			+lazyPicture({
+				src: `${baseDir}images/close.svg`,
+			})
+	//- .share_popup_bg

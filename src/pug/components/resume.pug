@@ -1,0 +1,47 @@
+.container.section#resume
+	.resume
+		.experience
+			h3= data.experience.header
+			each item, key in data.experience.list
+				.experience_item
+					.experience_date= item.date
+					.experience_title= item.title
+						.experience_indicators
+							each indicator, key in item.indicators.reverse()
+								+lazyPicture({
+									src: `${baseDir}images/${indicator}.svg`
+								}).experience_indicator.animation
+					.experience_company
+						.experience_img.animation
+								if item.img_name != undefined 
+									+lazyPicture({
+										src: `${baseDir}images/${item.img_name}.svg`,
+										alt: `${item.name_company}`,
+									}).experience_img_company
+								span.name_location
+									if item.name_company != '' 
+										span.experience_name_company= item.name_company
+									if item.location != '' 
+										span.experience_location= item.location
+
+					.experience_text.animation!= item.text
+					.experience_links.animation
+						each links, key in item.links
+							p 
+								a(href= links.href )= links.title
+		.man_img
+			+lazyPicture({
+				src: `${baseDir}images/man.png`,
+			})(srcset=`${baseDir}images/man.png 1x, ${baseDir}images/man@2x.png 2x`).img
+		.education
+			h3.animation2!= data.education.header
+			each item, key in data.education.list
+				.education_item.animation2
+					.education_indicators(class= "count_" + item.indicators.length)
+
+						each indicator, key in item.indicators
+							+lazyPicture({
+								src: `${baseDir}images/${indicator}_big.svg`
+							}).education_indicator
+					.education_title.animation2!= item.title
+					.education_text.animation2!= item.text
